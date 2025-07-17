@@ -8,9 +8,6 @@
 
 using namespace websockets2_generic;
 
-// Network settings (keep your existing MAC/IP config)
-// ... [keep your existing network setup code] ...
-
 // Enter a MAC address and IP address for your controller below.
 #define NUMBER_OF_MAC      20
 
