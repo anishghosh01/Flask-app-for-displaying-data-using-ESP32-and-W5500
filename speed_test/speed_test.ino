@@ -74,7 +74,7 @@ void setup() {
 
   esp_bt_controller_disable();
   Serial.begin(115200);
-  // ... [keep your existing setup code until ETH.config()] ...
+
 
   while (!Serial && (millis() < 5000));
 
@@ -94,15 +94,10 @@ void setup() {
   ET_LOGWARN1(F("SPI Clock (MHz):"), SPI_CLOCK_MHZ);
   ET_LOGWARN(F("========================="));
 
-  ///////////////////////////////////
 
-  // To be called before ETH.begin()
   ESP32_W5500_onEvent();
 
-  // start the ethernet connection and the server:
-  // Use DHCP dynamic IP and random mac
-  //bool begin(int MISO_GPIO, int MOSI_GPIO, int SCLK_GPIO, int CS_GPIO, int INT_GPIO, int SPI_CLOCK_MHZ,
-  //           int SPI_HOST, uint8_t *W6100_Mac = W6100_Default_Mac);
+
   ETH.begin( MISO_GPIO, MOSI_GPIO, SCK_GPIO, CS_GPIO, INT_GPIO, SPI_CLOCK_MHZ, ETH_SPI_HOST );
   //ETH.begin( MISO_GPIO, MOSI_GPIO, SCK_GPIO, CS_GPIO, INT_GPIO, SPI_CLOCK_MHZ, ETH_SPI_HOST, mac[millis() % NUMBER_OF_MAC] );
 
